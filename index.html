@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Matéria: o especialista em alta performance e longevidade Dr. Sandro Ferraz sobre hidratação, reposição e rotina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0a1b5e; }
+  a:hover { color: #2b3fa8; }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+  figcaption { text-wrap: pretty; }
+  @media (max-width: 600px) {
+    h1 { letter-spacing: -.015em !important; }
+  }
+  ul { margin: 0; padding: 0; list-style: none; }
+  img { max-width: 100%; display: block; }
+</style>
+</helmet>
+<div style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; color: #262626; background: #ffffff; padding-bottom: 74px">
+
+  <div style="border-bottom: 1px solid #dcdcdc; background: #ffffff">
+    <div style="max-width: 940px; margin: 0 auto; padding: 12px clamp(18px, 5vw, 28px); display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 20px; letter-spacing: .14em; color: #0a1b5e">ROI</span>
+        <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #666666">Saúde &amp; Performance</span>
+      </div>
+      <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888; border: 1px solid #dcdcdc; padding: 4px 8px">Conteúdo publicitário</span>
+    </div>
+  </div>
+
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 clamp(18px, 5vw, 28px)">
+
+    <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #0a1b5e; margin-top: 40px">Hidratação e performance</p>
+
+    <h1 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(28px, 4.8vw, 40px); line-height: 1.16; letter-spacing: -.018em; color: #000; margin-top: 10px">Por que cada vez mais pessoas estão trocando os eletrólitos tradicionais por uma fórmula mais completa</h1>
+
+    <p style="font-size: clamp(17px, 2.1vw, 20px); line-height: 1.6; color: #555555; margin-top: 16px">O especialista em alta performance e longevidade Dr. Sandro Ferraz explica por que repor só mineral não resolve o cansaço, a dor de cabeça e a queda de foco no fim do dia.</p>
+
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; margin-top: 20px; padding: 14px 0; border-top: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">
+      <img src="assets/dr-sandro-ferraz-avatar.png" alt="Dr. Sandro Ferraz" loading="lazy" style="width: 40px; height: 40px; border-radius: 999px; object-fit: cover; object-position: 50% 30%; flex: none">
+      <div style="min-width: 0">
+        <p style="font-size: 14px; color: #333333">Por <b style="font-weight: 700">Dr. Sandro Ferraz</b> · Especialista em alta performance e longevidade · CRM 133573/SP</p>
+        <p style="font-size: 13px; color: #888888; margin-top: 3px">São Paulo · 03/09/2026 08h00 · Atualizado há 2 horas</p>
+      </div>
+    </div>
+
+    <figure style="margin: 24px 0 0">
+      
+      <div style="position: relative; aspect-ratio: 16 / 9; margin-top: 14px; background: #17161a">
+        <iframe id="roi-vsl" src="https://www.youtube.com/embed/xDDzPjPur6s?controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3&amp;enablejsapi=1" title="Dr. Sandro Ferraz sobre reposição diária" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+        <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ toggleVideo }}" aria-label="Pausar vídeo" style="position: absolute; inset: 0; width: 100%; border: 0; padding: 0; cursor: pointer; background: transparent; display: flex; align-items: flex-end; justify-content: flex-start">
+            <span style="margin: 14px; background: rgba(10,27,94,.92); color: #fff; padding: 10px 16px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px">Pausar</span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ showCover }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ toggleVideo }}" aria-label="Assistir ao vídeo" style="position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer; padding: 0; background-color: #17161a; background-image: url('https://i.ytimg.com/vi/xDDzPjPur6s/maxresdefault.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center">
+            <span style="display: flex; align-items: center; gap: 12px; background: rgba(10,27,94,.94); color: #fff; padding: 14px 24px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px">▶ Assistir</span>
+          </button>
+        </sc-if>
+      </div>
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #666666; margin-top: 8px">Dr. Sandro Ferraz explica o papel dos eletrólitos, da creatina e dos neuroativos na rotina diária.</figcaption>
+    </figure>
+
+    <div style="margin-top: 18px; border: 1px solid #0a1b5e; background: #fff; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+        <div>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #0a1b5e">Leve 2, pague 1</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #555555; margin-top: 4px">38 sticks · R$ 4,47 por dose</p>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 10px">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 16px; color: #888888; text-decoration: line-through; white-space: nowrap">R$ 339,80</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 6vw, 34px); line-height: 1; letter-spacing: -.03em; color: #0a1b5e; white-space: nowrap">R$ 169,90</p>
+        </div>
+      </div>
+      <a href="#oferta" style="display: block; text-align: center; background: #0a1b5e; color: #fff; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(14px, 2.4vw, 16px); letter-spacing: .04em; text-transform: uppercase; padding: 16px 20px; text-decoration: none">Quero meu kit agora</a>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #666666; text-align: center">Envio em 24h · Compra segura</p>
+    </div>
+
+    <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 500; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: #555555; margin-top: 22px">Sem eletrólito, a água que você bebe passa e sai. O médico de alta performance e longevidade explica o que os minerais fazem no corpo, e por que uma única dose diária com creatina e neuroativos resolve o que hoje exige três potes na bancada.</p>
+
+    
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 26px">Água repõe água. Ela não repõe os minerais que saíram no suor, não devolve força ao músculo e não organiza a cabeça às três da tarde. A distinção parece pequena, mas é ela que explica por que tanta gente bebe dois litros por dia e continua arrastado.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">O que uma rotina de alta demanda consome se separa em três eixos: os minerais que saem no suor, a força que o músculo perde sem substrato e a clareza mental que cai junto. Raramente o cansaço vem da falta de um único nutriente.</p>
+
+    <div style="margin-top: 30px; border: 1px solid #dcdcdc; background: #dcdcdc; display: grid; gap: 1px">
+      <div style="background: #fff; padding: 16px 16px 4px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #0a1b5e">Os sinais mais comuns</p></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px">
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Cansaço que não passa</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">Você dorme, acorda e a sensação de reserva continua.</p></div>
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Dor de cabeça no fim do dia</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">Aparece por volta das cinco, quase sempre no mesmo horário.</p></div>
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Boca seca mesmo bebendo água</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">Muito líquido no dia e pouca hidratação de verdade.</p></div>
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Queda de foco pós-almoço</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">A concentração cai e o café só empurra o problema para a frente.</p></div>
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Câimbra e peso nas pernas</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">Falta de sódio, potássio e magnésio depois do suor.</p></div>
+        <div style="padding: 16px; background: #fff; display: grid; gap: 6px"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Treino sem rendimento</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #666666">Você chega à noite sem força para repetir a carga da semana passada.</p></div>
+      </div>
+    </div>
+
+    <p id="motivo-1" style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e; margin-top: 44px">Motivo 01</p>
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 10px">Hidratação é retenção, não volume</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">Beber muito líquido não é o mesmo que hidratar. Sem os minerais que puxam a água para dentro da célula, o volume atravessa o corpo e sai. Sódio, potássio e magnésio governam o equilíbrio de fluidos e a contração muscular: são eles que dão destino à água.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 26px">Suor, treino, café e ar-condicionado tiram mineral junto com o líquido. Na prática, a diferença aparece no fim do dia: menos boca seca, menos aquela dor de cabeça de fim de tarde, e uma dose pela manhã em vez de lembrar de beber a cada hora.</p>
+
+    <p id="motivo-2" style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e; margin-top: 44px">Motivo 02</p>
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 10px">Para que serve cada um: eletrólitos, creatina e neuroativos</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">São três funções diferentes, e é por isso que repor só uma delas não resolve o dia inteiro.</p>
+
+    <div style="margin-top: 24px; border: 1px solid #dcdcdc; background: #dcdcdc; display: flex; flex-wrap: wrap; gap: 1px">
+      <div style="flex: 1 1 230px; min-width: 0; background: #fff; padding: 20px; display: grid; gap: 10px; align-content: start">
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e">Eixo 1 · eletrólitos</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.25">Levam a água para dentro da célula</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #555555">Sódio, potássio e magnésio governam o equilíbrio de fluidos, a condução nervosa e a contração muscular. Sem eles a água atravessa o corpo e sai, e vem a câimbra, a boca seca e a dor de cabeça.</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #0a1b5e; border-top: 1px solid #ececec; padding-top: 10px">640mg por stick</p>
+      </div>
+      <div style="flex: 1 1 230px; min-width: 0; background: #fff; padding: 20px; display: grid; gap: 10px; align-content: start">
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e">Eixo 2 · creatina</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.25">Devolve energia ao músculo e ao cérebro</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #555555">A creatina reabastece o sistema que o corpo usa para esforço curto e intenso, do treino à carga mental do fim do dia. Funciona por saturação: o efeito vem do uso diário, não de uma dose isolada.</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #0a1b5e; border-top: 1px solid #ececec; padding-top: 10px">3g por stick</p>
+      </div>
+      <div style="flex: 1 1 230px; min-width: 0; background: #fff; padding: 20px; display: grid; gap: 10px; align-content: start">
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e">Eixo 3 · neuroativos</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.25">Sustentam o foco sem estimulante</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #555555">Tirosina, teanina, taurina, colina, inositol e vitaminas do complexo B atuam nos neurotransmissores ligados à atenção. Seguram a clareza mental da tarde sem cafeína, sem taquicardia e sem queda depois.</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #0a1b5e; border-top: 1px solid #ececec; padding-top: 10px">1.600mg por stick</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 34px; border-top: 1px solid #dcdcdc">
+      <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; font-weight: 700">Não é um isotônico. Não é mais um pote na bancada.</p>
+      <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">A questão nunca foi beber mais líquido. Era se o mineral, a creatina e o neuroativo estavam chegando na mesma dose, todos os dias, no horário em que o corpo precisa deles.</p>
+      <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">E é aqui que a conta muda: você não precisa mais montar esse conjunto por conta própria, medindo três produtos diferentes antes de sair de casa.</p>
+      <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px; font-weight: 700">Pela primeira vez, a reposição completa cabe em um único sachê, todas as manhãs.</p>
+      <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">Tudo medido, tudo combinado, tudo em uma dose por dia.</p>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(18px, 2.4vw, 21px); line-height: 1.4; color: #0a1b5e; text-align: center; margin-top: 30px">E tem nome: ROI Blue Power.</p>
+      <figure style="margin: 24px 0 0">
+        <img src="assets/produto-blueberry.jpg" alt="Stick do ROI Blue Power sobre blueberries, com os eixos de hidratação profunda, foco cognitivo e recuperação muscular" loading="lazy" style="width: 100%">
+        <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 10px">ROI Blue Power: um stick de 8g, sabor blueberry, com hidratação profunda, foco cognitivo e recuperação muscular na mesma dose.</figcaption>
+      </figure>
+
+      <a href="#oferta" style="display: block; text-align: center; background: #0a1b5e; color: #fff; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(14px, 2vw, 16px); letter-spacing: .04em; text-transform: uppercase; padding: 17px 20px; margin-top: 20px; text-decoration: none" style-hover="background: #16297f">Ver a promoção compre 1 e leve 2 →</a>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #666666; text-align: center; margin-top: 12px">38 sticks por R$ 169,90 · R$ 4,47 por dia de uso</p>
+    </div>
+
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 42px">O produto, de perto</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">Esqueça três potes, três colheres e a preocupação de acertar cada dose todos os dias.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">Cada stick já vem <b>lacrado e com as três doses medidas</b>. É só abrir, misturar em 300 a 500 ml de água gelada e pronto.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">A fórmula dissolve completamente, <b>sem grumos ou resíduos</b>, e o sabor blueberry torna o consumo muito mais agradável.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">Cada caixa traz <b>19 sticks, um por dia</b>. Cabe na mochila, na gaveta ou na mala e fica pronto em 8 segundos.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px; font-weight: 700">Mais praticidade para transformar a suplementação em rotina.</p>
+
+    <div style="margin-top: 26px; border: 1px solid #dcdcdc; background: #fff">
+      <img src="assets/stick-blueberries-flatlay.jpg" alt="Stick de 8g do ROI Blue Power entre blueberries frescas" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 40%">
+      <div style="padding: 24px 22px 22px; border-top: 1px solid #dcdcdc">
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e">Rótulo · 8g por stick</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(21px, 3vw, 26px); line-height: 1.2; letter-spacing: -.015em; margin-top: 10px">A dose diária dos três eixos em um sachê</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #e0e0e0; border-top: 1px solid #e0e0e0">
+        <div style="flex: 1 1 210px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 8px 16px; background: #fff; padding: 16px 18px">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.2">Eletrólitos</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.02em; color: #0a1b5e; white-space: nowrap; text-align: right">640<span style="font-size: 12px; font-weight: 700; margin-left: 2px; color: #666666">mg</span></p>
+          <p style="grid-column: 1 / -1; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">Sódio, potássio e magnésio para retenção de água na célula.</p>
+        </div>
+        <div style="flex: 1 1 210px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 8px 16px; background: #fff; padding: 16px 18px">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.2">Creatina</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.02em; color: #0a1b5e; white-space: nowrap; text-align: right">3<span style="font-size: 12px; font-weight: 700; margin-left: 2px; color: #666666">g</span></p>
+          <p style="grid-column: 1 / -1; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">Dose cheia de monohidratada, a mesma usada nos estudos de saturação.</p>
+        </div>
+        <div style="flex: 1 1 210px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 8px 16px; background: #fff; padding: 16px 18px">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.2">Neuroativos</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.02em; color: #0a1b5e; white-space: nowrap; text-align: right">1.600<span style="font-size: 12px; font-weight: 700; margin-left: 2px; color: #666666">mg</span></p>
+          <p style="grid-column: 1 / -1; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">Tirosina, teanina, taurina, colina, inositol e complexo B.</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px; padding: 14px 20px; border-top: 1px solid #dcdcdc; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .04em; color: #555555">
+        <span>zero açúcar</span>
+        <span>zero cafeína</span>
+        <span>sabor blueberry</span>
+      </div>
+    </div>
+
+    
+
+    <figure style="margin: 28px 0 0; padding: 22px 0; border-top: 2px solid #262626; border-bottom: 1px solid #dcdcdc">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888">A dor e a solução</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 18px">
+        <div style="background: #f5f5f5; border: 1px solid #dcdcdc; padding: 18px">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #666666">A dor · só água</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; margin-top: 8px">Você bebe água, mas o cansaço continua</p>
+          <svg viewBox="0 0 320 150" style="width: 100%; height: auto; margin-top: 12px" aria-label="Curva conceitual: hidratação com água pura sobe e cai">
+            <line x1="18" y1="120" x2="310" y2="120" stroke="#dcdcdc" stroke-width="1"></line>
+            <line x1="18" y1="80" x2="310" y2="80" stroke="#e8e8e8" stroke-width="1"></line>
+            <line x1="18" y1="40" x2="310" y2="40" stroke="#e8e8e8" stroke-width="1"></line>
+            <path d="M18 120 C60 118 70 40 110 40 C150 40 160 112 220 116 C260 118 285 119 310 119" fill="none" stroke="#666666" stroke-width="2"></path>
+            <path d="M18 120 C60 118 70 40 110 40 C150 40 160 112 220 116 C260 118 285 119 310 119 L310 120 L18 120 Z" fill="#666666" opacity=".10"></path>
+            <text x="100" y="30" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#666666">pico</text>
+            <text x="196" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#666666">e sai</text>
+            <text x="16" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">0h</text>
+            <text x="150" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">2h</text>
+            <text x="288" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">4h</text>
+          </svg>
+          <ul style="margin-top: 12px; display: grid; gap: 6px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 13px; color: #666666">
+            <li>Volume sem mineral</li>
+            <li>Boca seca de novo em uma hora</li>
+            <li>Dor de cabeça no fim da tarde</li>
+          </ul>
+        </div>
+        <div style="background: #f2f5fd; border: 1px solid #c9d3f0; padding: 18px">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+            <div>
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e">A solução · ROI Blue Power</p>
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; margin-top: 8px">640mg de eletrólitos dão destino à água</p>
+            </div>
+            <img src="assets/produto-blueberry.jpg" alt="Stick ROI Blue Power" loading="lazy" style="width: 46px; height: 46px; object-fit: cover; flex: none">
+          </div>
+          <svg viewBox="0 0 320 150" style="width: 100%; height: auto; margin-top: 12px" aria-label="Curva conceitual: hidratação com eletrólitos sobe e se mantém">
+            <line x1="18" y1="120" x2="310" y2="120" stroke="#dcdcdc" stroke-width="1"></line>
+            <line x1="18" y1="80" x2="310" y2="80" stroke="#e3e8f8" stroke-width="1"></line>
+            <line x1="18" y1="40" x2="310" y2="40" stroke="#e3e8f8" stroke-width="1"></line>
+            <path d="M18 120 C55 116 75 46 115 42 C170 38 240 44 310 50" fill="none" stroke="#0a1b5e" stroke-width="2.5"></path>
+            <path d="M18 120 C55 116 75 46 115 42 C170 38 240 44 310 50 L310 120 L18 120 Z" fill="#0a1b5e" opacity=".10"></path>
+            <text x="192" y="32" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#0a1b5e">se mantém</text>
+            <text x="16" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">0h</text>
+            <text x="150" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">2h</text>
+            <text x="288" y="136" font-family="Libre Franklin, Arial, sans-serif" font-size="9" fill="#a9a49a">4h</text>
+          </svg>
+          <ul style="margin-top: 12px; display: grid; gap: 6px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 13px; color: #23304f">
+            <li>Sódio 350mg · potássio 227mg · magnésio 63mg</li>
+            <li>Um stick em 300–500ml, uma vez ao dia</li>
+            <li>Zero açúcar, zero cafeína</li>
+          </ul>
+        </div>
+      </div>
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 14px">Ilustração conceitual do papel dos eletrólitos na retenção de água. Não representa medição, estudo clínico ou curva de absorção do produto.</figcaption>
+    </figure>
+
+    <p id="motivo-3" style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e; margin-top: 44px">Motivo 03</p>
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 10px">A evolução que a ROI trouxe para a reposição</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">A história da reposição diária é uma sequência de remendos. Primeiro veio a água, que dá volume sem mineral. Depois o isotônico de prateleira, que trouxe sódio junto com açúcar. Em seguida a era dos potes: creatina de um lado, eletrólito de outro, fórmula de foco em um terceiro, cada um com sua colher e seu preço.</p>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 18px">O Blue Power é o passo seguinte: a ROI juntou os três eixos em uma única dose, em pó solúvel, sem açúcar e sem cafeína, e tirou da rotina tudo o que fazia as pessoas desistirem: a colher, a balança, o pote na bancada e o shaker sujo.</p>
+
+    
+
+    <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(21px, 3.2vw, 27px); line-height: 1.3; margin-top: 34px; padding: 18px 0 18px 20px; border-left: 4px solid #0a1b5e; color: #14203d">A evolução não foi adicionar mais um pote. Foi tirar todos eles do caminho.</p>
+
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 42px">O que existe dentro de 8g</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">O ROI Blue Power foi montado ao contrário do pote: uma dose, um stick, os três eixos na dose que funciona. Cada stick tem 3g de creatina monohidratada pura, 1.600mg de neuroativos e 640mg de eletrólitos, sem açúcar e sem cafeína.</p>
+
+    <figure style="margin: 28px 0 0; padding: 22px 0; border-top: 2px solid #262626; border-bottom: 1px solid #dcdcdc">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888">Composição por massa</p>
+      <div style="display: flex; height: 40px; margin-top: 14px; border: 1px solid #dcdcdc">
+        <div style="flex: 37.5; background: #0a1b5e"></div>
+        <div style="flex: 20; background: #2b3fa8"></div>
+        <div style="flex: 8; background: #6a7fe0"></div>
+        <div style="flex: 34.5; background: #ececec"></div>
+      </div>
+      <div style="display: grid; gap: 8px; margin-top: 14px">
+        <div style="display: flex; align-items: baseline; gap: 12px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px"><span style="width: 10px; height: 10px; background: #0a1b5e; flex: none"></span><b style="min-width: 74px">3.000mg</b><span style="color: #555555">Creatina monohidratada</span></div>
+        <div style="display: flex; align-items: baseline; gap: 12px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px"><span style="width: 10px; height: 10px; background: #2b3fa8; flex: none"></span><b style="min-width: 74px">1.600mg</b><span style="color: #555555">Neuroativos</span></div>
+        <div style="display: flex; align-items: baseline; gap: 12px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px"><span style="width: 10px; height: 10px; background: #6a7fe0; flex: none"></span><b style="min-width: 74px">640mg</b><span style="color: #555555">Eletrólitos</span></div>
+        <div style="display: flex; align-items: baseline; gap: 12px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px"><span style="width: 10px; height: 10px; background: #ececec; border: 1px solid #dcdcdc; flex: none"></span><b style="min-width: 74px">restante</b><span style="color: #555555">Demais componentes · 1,8g carboidratos · 7 kcal</span></div>
+      </div>
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 14px">Proporções por massa em uma porção de 8g (1 stick), conforme composição informada pelo fabricante.</figcaption>
+    </figure>
+
+    <div style="margin-top: 30px; border-top: 1px solid #dcdcdc">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888; margin-top: 16px">Tabela 1 · composição completa por stick</p>
+      <ul style="margin-top: 12px">
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Creatina monohidratada</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">3.000 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>L-tirosina</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">500 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Taurina</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">400 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Sódio</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">350 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Colina</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">275 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Potássio</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">227 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>L-teanina</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">200 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Inositol</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">200 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Magnésio</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">63 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Niacina</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">15 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ececec; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Vitamina B6</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">1,3 mg</b></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 15px"><span>Vitamina B12</span><b style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">2,4 mcg</b></li>
+      </ul>
+    </div>
+
+    <p id="motivo-4" style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e; margin-top: 44px">Motivo 04</p>
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 10px">Como entra na rotina</h2>
+
+    <div style="margin-top: 20px; border: 1px solid #dcdcdc; background: #e0e0e0; display: flex; flex-wrap: wrap; gap: 1px">
+      <div style="flex: 1 1 190px; min-width: 0; background: #fff; padding: 20px 18px; display: grid; gap: 8px; align-content: start">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #fff; background: #0a1b5e; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex: none">1</span>
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; color: #0a1b5e">2 segundos</span>
+        </div>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25">Abra o stick</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">São 8g lacrados, na dose exata. Sem colher, sem balança e sem cálculo.</p>
+      </div>
+      <div style="flex: 1 1 190px; min-width: 0; background: #fff; padding: 20px 18px; display: grid; gap: 8px; align-content: start">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #fff; background: #0a1b5e; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex: none">2</span>
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; color: #0a1b5e">6 segundos</span>
+        </div>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25">Dissolva na água</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">Em 300 a 500ml de água gelada. Dissolve por completo, sem grumos no fundo do copo.</p>
+      </div>
+      <div style="flex: 1 1 190px; min-width: 0; background: #fff; padding: 20px 18px; display: grid; gap: 8px; align-content: start">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #fff; background: #0a1b5e; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex: none">3</span>
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; color: #0a1b5e">todos os dias</span>
+        </div>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.25">Beba uma vez ao dia</p>
+        <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #666666">De manhã ou antes do treino. A dose diária dos três eixos já está ali.</p>
+      </div>
+    </div>
+
+
+    <figure style="margin: 26px 0 0">
+      <img src="assets/stick-blueberries-flatlay.jpg" alt="Stick do ROI Blue Power entre blueberries" loading="lazy" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 40%">
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 10px">Sabor blueberry, zero açúcar e zero cafeína. Cada caixa traz 19 sticks.</figcaption>
+    </figure>
+
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 42px">Como o seu dia se comporta, com e sem reposição</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">Em um dia comum, o nível de hidratação, força e foco só desce: um pouco depois do almoço, mais um tanto no fim da tarde, e o treino das sete acontece com o tanque na reserva. A reposição diária existe para achatar essa curva.</p>
+
+    <figure style="margin: 28px 0 0; padding: 22px 0; border-top: 2px solid #262626; border-bottom: 1px solid #dcdcdc">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888">Um dia inteiro, das 6h às 22h</p>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(17px, 2.4vw, 20px); line-height: 1.3; margin-top: 10px">Rotina comum contra rotina com um stick pela manhã</p>
+      <svg viewBox="0 0 660 232" style="width: 100%; height: auto; margin-top: 16px" aria-label="Curva conceitual comparando o nível de hidratação, força e foco ao longo de um dia em uma rotina comum e em uma rotina com ROI Blue Power">
+        <line x1="40" y1="200" x2="650" y2="200" stroke="#dcdcdc" stroke-width="1"></line>
+        <line x1="40" y1="16" x2="40" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="29" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">6h</text><line x1="140" y1="16" x2="140" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="129" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">9h</text><line x1="250" y1="16" x2="250" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="234" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">12h</text><line x1="370" y1="16" x2="370" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="354" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">15h</text><line x1="490" y1="16" x2="490" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="474" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">18h</text><line x1="610" y1="16" x2="610" y2="200" stroke="#efe9dd" stroke-width="1"></line>
+        <text x="594" y="222" font-family="Libre Franklin, Arial, sans-serif" font-size="19" fill="#888888">21h</text>
+        <path d="M40 62 C110 66 130 76 190 88 C240 98 250 148 300 152 C350 156 380 140 420 138 C470 136 500 168 560 176 C600 181 630 184 650 186" fill="none" stroke="#888888" stroke-width="3"></path>
+        <path d="M40 76 C80 56 120 46 190 44 C260 42 320 46 400 50 C470 54 560 58 650 64" fill="none" stroke="#0a1b5e" stroke-width="3"></path>
+        <circle cx="70" cy="62" r="4.5" fill="#0a1b5e"></circle>
+        <line x1="70" y1="70" x2="70" y2="104" stroke="#0a1b5e" stroke-width="1.5"></line>
+        <text x="52" y="126" font-family="Libre Franklin, Arial, sans-serif" font-size="21" fill="#0a1b5e">1 stick</text>
+        </svg>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px">
+        <span style="display: flex; align-items: center; gap: 8px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #555555"><span style="width: 18px; height: 3px; background: #888888"></span>rotina comum: cai no pós-almoço e chega ao treino na reserva</span>
+        <span style="display: flex; align-items: center; gap: 8px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #555555"><span style="width: 18px; height: 3px; background: #0a1b5e"></span>rotina com ROI Blue Power: um stick às 7h, mesmo nível até a noite</span>
+      </div>
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 14px">Curva conceitual do nível combinado de hidratação, força e foco em um dia, sem escala numérica. Não representa medição do produto.</figcaption>
+    </figure>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin-top: 26px; border-top: 1px solid #dcdcdc">
+      <div style="padding: 16px 16px 16px 0; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #0a1b5e">7h</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #555555; margin-top: 6px">O stick entra antes de o dia começar. Uma dose, 8 segundos.</p></div>
+      <div style="padding: 16px; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #0a1b5e">14h</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #555555; margin-top: 6px">Onde a rotina comum despenca, os neuroativos seguram o foco sem cafeína.</p></div>
+      <div style="padding: 16px; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #0a1b5e">19h</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #555555; margin-top: 6px">Treino com os 3g de creatina do dia já contabilizados.</p></div>
+      <div style="padding: 16px; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #0a1b5e">22h</p><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #555555; margin-top: 6px">Sem cafeína no caminho, o dia termina sem o efeito rebote do energético.</p></div>
+    </div>
+
+    
+
+    <p id="motivo-5" style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #0a1b5e; margin-top: 44px">Motivo 05</p>
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 10px">Não é só hidratação</h2>
+
+    <p style="font-size: clamp(17px, 1.9vw, 18px); line-height: 1.62; color: #333333; margin-top: 14px">Comparado às categorias que ocupam a bancada, o stick faz o trabalho de três em uma única bebida.</p>
+
+    <figure style="margin: 26px 0 0; padding-top: 22px; border-top: 2px solid #262626">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #888888">Tabela 2 · comparação de categorias</p>
+      <div style="overflow-x: auto; margin-top: 14px">
+        <div style="min-width: 600px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); align-items: end">
+            <div></div>
+            <div style="margin: 0 4px; height: 84px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/produto-blueberry.jpg" alt="Stick ROI Blue Power" loading="lazy" style="height: 84px; width: 100%; object-fit: cover"></div>
+            <div style="margin: 0 4px; height: 84px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/comp-eletrolitos-s.jpg" alt="Sachê de mistura de eletrólitos" loading="lazy" style="height: 84px; width: 100%; object-fit: cover; object-position: center"></div>
+            <div style="margin: 0 4px; height: 84px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/comp-creatina-s.jpg" alt="Pote de creatina monohidratada" loading="lazy" style="height: 84px; width: 100%; object-fit: cover; object-position: center"></div>
+            <div style="margin: 0 4px; height: 84px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/comp-nootropicos-s.jpg" alt="Pote de nootrópicos" loading="lazy" style="height: 84px; width: 100%; object-fit: cover; object-position: center"></div>
+            <div style="margin: 0 4px; height: 84px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/comp-isotonico-s.jpg" alt="Garrafa de isotônico" loading="lazy" style="height: 84px; width: 100%; object-fit: cover; object-position: center"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #666666; border-bottom: 1px solid #262626; margin-top: 8px">
+            <div></div>
+            <div style="background: #0a1b5e; color: #fff; text-align: center; padding: 12px 6px">ROI Blue Power</div>
+            <div style="text-align: center; padding: 12px 6px">Eletrólitos</div>
+            <div style="text-align: center; padding: 12px 6px">Creatina</div>
+            <div style="text-align: center; padding: 12px 6px">Nootrópicos</div>
+            <div style="text-align: center; padding: 12px 6px">Isotônico</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Eletrólitos</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;"><span style="font-size: 13px; color: #666666">640mg</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Creatina</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;"><span style="font-size: 13px; color: #666666">3g</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Neuroativos</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;"><span style="font-size: 13px; color: #666666">1.600mg</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Zero açúcar</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">raro</span></div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Zero cafeína</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #ececec; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Dose individual</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="font-size: 13px; color: #666666">depende</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div>
+        </div>
+          <div style="display: grid; grid-template-columns: 1.05fr repeat(5, 1fr); border-bottom: 1px solid #dcdcdc; font-size: 15px">
+          <div style="padding: 13px 6px 13px 0; font-size: 14px">Uma única bebida</div>
+          <div style="padding: 13px 8px; text-align: center; background: #f2f5fd; color: #0a1b5e; font-weight: 600;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;"><span style="color: #a9a49a">—</span></div><div style="padding: 13px 8px; text-align: center; color: #555555;">✓</div>
+        </div>
+        </div>
+      </div>
+      <figcaption style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #888888; margin-top: 12px">Comparação conceitual entre categorias de produto, com base na composição proposta. Não é estudo científico nem comparação entre marcas específicas.</figcaption>
+    </figure>
+
+    <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.01em; color: #000; margin-top: 42px">As perguntas que chegam antes da primeira caixa</h2>
+
+    <div style="margin-top: 18px; border-top: 1px solid #dcdcdc">
+      <div style="padding: 18px 0; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Já tomo creatina. Vou tomar dose dupla?</p><p style="font-size: 17px; line-height: 1.65; color: #555555; margin-top: 8px">Cada stick tem 3g de creatina monohidratada pura, a dose diária de manutenção. O Blue Power substitui o pote, não soma a ele.</p></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Vai me deixar acelerado?</p><p style="font-size: 17px; line-height: 1.65; color: #555555; margin-top: 8px">Zero cafeína. O foco vem de tirosina, teanina, taurina, colina, inositol e vitaminas do complexo B, sem taquicardia e sem queda depois.</p></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid #ececec"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">Preciso treinar para fazer sentido?</p><p style="font-size: 17px; line-height: 1.65; color: #555555; margin-top: 8px">Não. Hidratação, força e clareza mental servem para o dia de treino e para o dia de reunião. Uma dose por dia, no horário que couber.</p></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid #dcdcdc"><p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px">E o gosto?</p><p style="font-size: 17px; line-height: 1.65; color: #555555; margin-top: 8px">Blueberry, zero açúcar. Feito para água bem gelada, que é onde ele fica melhor.</p></div>
+    </div>
+
+    <div style="margin-top: 42px; background: #f4f6fb; border: 1px solid #dfe4f1; border-radius: 18px; padding: 22px 0 20px">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 0 22px">
+        <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(19px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -.015em; color: #0a1b5e">Quem experimentou, não vive mais sem</h2>
+        <div style="display: flex; align-items: center; gap: 8px">
+          <span style="color: #0a1b5e; font-size: 14px; letter-spacing: .12em">★★★★★</span>
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; color: #0a1b5e">4,9</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 16px; padding: 0 22px 4px; overflow-x: auto; scroll-snap-type: x mandatory">
+        <div style="position: relative; flex: 0 0 auto; width: clamp(132px, 30vw, 158px); scroll-snap-align: start">
+          <video src="assets/dep-01.mp4" data-dep="01" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="metadata" onClick="{{ toggleSom }}" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #17161a; cursor: pointer"></video>
+          <span style="position: absolute; top: 8px; left: 8px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .02em; color: #fff; background: rgba(10,27,94,.72); padding: 4px 7px; border-radius: 999px; pointer-events: none">@roi.health</span>
+          <button onClick="{{ toggleSom }}" data-dep="01" style="position: absolute; left: 8px; bottom: 8px; display: flex; align-items: center; gap: 5px; background: rgba(23,22,26,.66); color: #fff; border: 0; border-radius: 999px; padding: 5px 9px; cursor: pointer; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .06em; text-transform: uppercase">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"></path></svg>
+            Ver com som
+          </button>
+        </div>
+        <div style="position: relative; flex: 0 0 auto; width: clamp(132px, 30vw, 158px); scroll-snap-align: start">
+          <video src="assets/dep-04.mp4" data-dep="04" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="metadata" onClick="{{ toggleSom }}" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #17161a; cursor: pointer"></video>
+          <span style="position: absolute; top: 8px; left: 8px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .02em; color: #fff; background: rgba(10,27,94,.72); padding: 4px 7px; border-radius: 999px; pointer-events: none">@roi.health</span>
+          <button onClick="{{ toggleSom }}" data-dep="04" style="position: absolute; left: 8px; bottom: 8px; display: flex; align-items: center; gap: 5px; background: rgba(23,22,26,.66); color: #fff; border: 0; border-radius: 999px; padding: 5px 9px; cursor: pointer; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .06em; text-transform: uppercase">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"></path></svg>
+            Ver com som
+          </button>
+        </div>
+        <div style="position: relative; flex: 0 0 auto; width: clamp(132px, 30vw, 158px); scroll-snap-align: start">
+          <video src="assets/dep-06.mp4" data-dep="06" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="metadata" onClick="{{ toggleSom }}" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #17161a; cursor: pointer"></video>
+          <span style="position: absolute; top: 8px; left: 8px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .02em; color: #fff; background: rgba(10,27,94,.72); padding: 4px 7px; border-radius: 999px; pointer-events: none">@roi.health</span>
+          <button onClick="{{ toggleSom }}" data-dep="06" style="position: absolute; left: 8px; bottom: 8px; display: flex; align-items: center; gap: 5px; background: rgba(23,22,26,.66); color: #fff; border: 0; border-radius: 999px; padding: 5px 9px; cursor: pointer; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: .06em; text-transform: uppercase">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"></path></svg>
+            Ver com som
+          </button>
+        </div>
+      </div>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.6; color: #6f7896; margin-top: 12px; padding: 0 22px">Depoimentos individuais. Resultados variam de pessoa para pessoa.</p>
+    </div>
+
+    <div id="oferta" style="margin-top: 44px">
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: clamp(16px, 2vw, 18px); line-height: 1.6; text-align: center; color: #555555">Pedindo hoje, por esta página, o ROI Blue Power sai por</p>
+
+      <div style="position: relative; margin-top: 14px">
+        <img src="assets/produto-caixa-sache.jpg" alt="Caixa de 19 sachês do ROI Blue Power" loading="lazy" style="width: 100%; display: block">
+        <div style="position: absolute; top: 4%; right: 2%; width: clamp(78px, 15%, 108px); aspect-ratio: 1; border-radius: 999px; background: #0a1b5e; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.05">
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 10px; letter-spacing: .1em; text-transform: uppercase">Economize</span>
+          <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(18px, 3.4vw, 24px); margin-top: 3px">R$ 170</span>
+        </div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #dcdcdc; padding: 24px 20px; text-align: center; margin-top: -6px">
+        <div style="display: flex; align-items: baseline; justify-content: center; gap: 12px; flex-wrap: wrap">
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(38px, 9vw, 56px); line-height: 1; letter-spacing: -.035em; color: #0a1b5e; white-space: nowrap">R$ 169,90</p>
+          <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: clamp(18px, 3vw, 22px); color: #888888; text-decoration: line-through; white-space: nowrap">R$ 339,80</p>
+        </div>
+        <p style="display: inline-block; background: #0a1b5e; color: #fff; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(13px, 1.9vw, 15px); letter-spacing: .04em; text-transform: uppercase; padding: 13px 22px; margin-top: 18px">Duas caixas pelo preço de uma</p>
+      </div>
+
+      <h2 style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(24px, 4vw, 32px); line-height: 1.2; text-align: center; color: #0a1b5e; margin-top: 34px">O que você recebe</h2>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 12px; color: #666666; text-align: center; margin-top: 8px">Blue Power · sabor blueberry · 19 sticks por caixa</p>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; text-align: center; color: #0a1b5e; margin-top: 12px">Seu desconto expira em <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; color: #0a1b5e; background: #dceafc; padding: 4px 9px; font-variant-numeric: tabular-nums">{{ countdown }}</span></p>
+
+      <div style="height: 9px; background: #e2e7f4; margin-top: 14px; overflow: hidden">
+        <div style="height: 100%; width: {{ lotePct }}; background: #0a1b5e"></div>
+      </div>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; text-align: center; color: #0a1b5e; margin-top: 8px">Lote promocional em andamento</p>
+
+      <div style="margin-top: 20px; border: 2px solid #0a1b5e; background: #fff">
+        <p style="background: #0a1b5e; color: #fff; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; text-align: center; padding: 7px">Promoção compre 1 e leve 2</p>
+        <div style="padding: 18px 18px 20px">
+          <div style="display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap">
+            <div style="flex: 1 1 180px; min-width: 0">
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px">Duas caixas, 38 sticks</p>
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; color: #666666; margin-top: 4px">Um mês e meio de reposição completa em casa</p>
+            </div>
+            <div style="text-align: right; flex: none">
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; color: #888888; text-decoration: line-through">R$ 339,80</p>
+              <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 22px; color: #0a1b5e; white-space: nowrap">R$ 169,90</p>
+            </div>
+          </div>
+          <p style="display: inline-flex; align-items: baseline; gap: 7px; margin-top: 16px; background: #0a1b5e; color: #fff; padding: 8px 14px; border-radius: 999px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif"><b style="font-weight: 800; font-size: 17px; letter-spacing: -.01em">R$ 4,47</b><span style="font-size: 13px; color: #c9d6f7">por dose diária</span></p>
+          <ul style="display: grid; gap: 7px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e2e7f4; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; color: #333333">
+            <li>Segunda caixa inclusa, sem custo adicional</li>
+            <li>Envio em até 24h, todo o Brasil</li>
+            <li>Até 3x de R$ 56,63 sem juros ou Pix</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="https://checkout.roioficial.com/checkout?kit=01a06792-eeb0-71c0-9fe5-a10448180bd8" style="display: block; text-align: center; background: #0a1b5e; color: #fff; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(15px, 2.2vw, 18px); letter-spacing: .03em; text-transform: uppercase; padding: 19px 20px; margin-top: 22px; text-decoration: none" style-hover="background: #16297f">Quero meu kit com 2 caixas →</a>
+      <a href="https://lp.roioficial.com/#oferta" style="display: block; text-align: center; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 14px; color: #0a1b5e; margin-top: 14px">Ver todos os kits no site da ROI</a>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.7; color: #888888; text-align: center; margin-top: 14px">Compra 100% segura · quando a promoção encerra, o kit volta ao preço de duas caixas</p>
+    </div>
+
+    <div style="border-top: 1px solid #dcdcdc; margin-top: 44px; padding: 24px 0 40px; font-family: 'Libre Franklin', Helvetica, Arial, sans-serif">
+      <span style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 20px; letter-spacing: .14em; color: #0a1b5e">ROI</span>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.7; color: #888888; margin-top: 14px">Roi Suplementos LTDA · CNPJ 63.675.277/0001-34 · contato@roioficial.com</p>
+      <p style="font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.7; color: #888888; margin-top: 10px">Suplemento alimentar em pó. Este produto não substitui uma alimentação equilibrada e seu consumo deve ser orientado por nutricionista ou médico. Conteúdo publicitário.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 13px">
+        <a href="https://api.whatsapp.com/send/?phone=5511971210740">WhatsApp</a>
+        <a href="https://www.instagram.com/roi.health">Instagram</a>
+        <a href="https://www.tiktok.com/@roi.health">TikTok</a>
+        <a href="https://www.youtube.com/@roi.health">YouTube</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { playing: false, left: 0 };
+  deadline() {
+    const key = 'roi-adv-deadline';
+    let v = Number(localStorage.getItem(key) || 0);
+    if (!v || v < Date.now()) { v = Date.now() + 47 * 3600 * 1000; localStorage.setItem(key, String(v)); }
+    return v;
+  }
+  componentDidMount() {
+    const end = this.deadline();
+    const tick = () => this.setState({ left: Math.max(0, end - Date.now()) });
+    tick();
+    this.timer = setInterval(tick, 1000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  post(func) {
+    const el = document.getElementById('roi-vsl');
+    if (el && el.contentWindow) el.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), '*');
+  }
+  toggleSom(ev) {
+    const card = ev.currentTarget.closest('div');
+    const v = card && card.querySelector('video');
+    if (!v) return;
+    const ligar = v.muted;
+    document.querySelectorAll('video[data-dep]').forEach(o => { o.muted = true; });
+    v.muted = !ligar;
+    v.play().catch(() => {});
+  }
+  renderVals() {
+    return {
+      toggleSom: this.toggleSom.bind(this),
+      playing: this.state.playing,
+      countdown: (() => {
+        const t = Math.floor(this.state.left / 1000);
+        const p = n => String(n).padStart(2, '0');
+        return p(Math.floor(t / 3600)) + 'h ' + p(Math.floor(t / 60) % 60) + 'm ' + p(t % 60) + 's';
+      })(),
+      lotePct: Math.min(96, 100 - Math.round((this.state.left / (47 * 3600 * 1000)) * 100) * 0.6) + '%',
+      showCover: !this.state.playing,
+      toggleVideo: () => {
+        const playing = !this.state.playing;
+        this.post(playing ? 'playVideo' : 'pauseVideo');
+        this.setState({ playing });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
